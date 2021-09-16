@@ -1,5 +1,108 @@
 {% extends "home/base.html" %}
 {% block title %} home {% endblock title %}
+{% load static %}
+
+{% block style %}
+ <link rel="stylesheet" href="{% static 'main.css'%}" type="text/css">
+{% endblock style %}
+
 {% block content %} 
-<p>hello from home</p>
+<div class="container">
+	<section class="showcase">
+			<div class="video-container">
+				<video src="https://traversymedia.com/downloads/video.mov" autoplay muted loop></video>
+					{% load static %}
+				<video src="{% static 'video.mov' %}" autoplay muted loop></video>
+			</div>
+			<div class="content">
+				<h1>Shoot For The Services</h1>
+				<h3>GSAYD</h3>
+				<a href="#about" class="btn">Read More</a>
+			</div>
+		</section>
+
+		<section id="about" class="lead">
+			<p>
+				Purpose of developing this website is to get everything related to study materials in one website, where user can get Study material of their interest. Mostly student does not get their study material easily. They have to scrap different site to get all the things, either getting depend on your classmates and seniors.
+
+			</p>
+
+
+</section>
+
+<!--	<div class="container text-center">-->
+<!--		<p><h3>Latest Ebooks</h3></h3> </p>-->
+<!--	</div>-->
+<!--<div class="pdf my-4">-->
+<!--<div class="card w-50" >-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">Pdf title</h5>-->
+<!--    <p class="card-text">About pdf | content.</p>-->
+<!--    <a href="#" class="btn btn-success">Read</a>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div class="conatiner">-->
+<!--	<h2>Follow Me On Social Media</h2>-->
+
+<!--			<div class="social">-->
+<!--			<a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-3x"></i></a>-->
+<!--				<a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook fa-3x"></i></a>-->
+<!--				<a href="https://github.com/prashantsagar73" target="_blank"><i class="fab fa-github fa-3x"></i></a>-->
+<!--				<a href="https://www.linkedin.com/in/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>-->
+<!--			</div>-->
+
+<!--</div>-->
+
+</div>
+
+<div id='container'>
+  <div class='hero' id='hero'>
+    <div class='hero-content'>
+      <h1>NOT ALL THOSE WHO WANDER ARE <span class='highlight'>LOST</span>.<br>
+      <span>YOUR <span class='highlight'>STORY</span> STARTS HERE.</span></h1>
+      <div class='description'></div>
+      <div class'buttons'><button id='scroll-button'></button>
+      </div>
+    </div>
+            <i class='fa fa-angle-double-down' id='scroll-icon'></i>
+
+    <div class='gradient-overlay'></div>
+  </div>
+  <div class='flex-wrapper'>
+  <div class='section'>
+<div class='gradient-2-overlay'></div>
+    <div class='col-left' id='col-left'>
+      <h2> SO YOU LIKE  <span class='highlight-secondary'>GSAYD</span>?</h2>
+         <div class='paragraph'> <br><br> Purpose of developing this website is to get everything related to study materials in one website, where user can get Study material of their interest. Mostly student does not get their study material easily. They have to scrap different site to get all the things, or getting depend on your classmates and seniors.
+
+<br>Our goal is to provide top-notch  and high-quality study material to students currently studying in the university, without any hustle, free-of-cost.<br>
+
+Here you can find your class notes, study material, Ebook, Events & competation related to your syllabus. All informations are  genuine, thoroughly checked.  All you have to do is explore and study.
+
+</div>
+    </div>
+<!--	  Prashant sagar-->
+    <div class='col-right' id='col-right'>
+      <div class='col-right-overlay'></div>
+		Notifie me about latest news
+      <div class='input-container'>
+    <input type='text' placeholder='Your name'/>
+    <input type='email' placeholder='Email' />
+        <button class='full-width'>Notifie</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
 {% endblock %}
+
+
+{% block script%}
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock script %}
+
