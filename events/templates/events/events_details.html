@@ -1,23 +1,25 @@
 {% extends "home/base.html" %}
 {% block content %} 
 
-<div class="col-md-10">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">{{ object.author }}</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#">{{ object.title }}</a>
-              </h3>
-              <div class="mb-1 text-muted">{{ object.date_time }}</div>
-              <p class="card-text mb-auto">{{ object.content }} </p>
-             {% if object.author == user%}
-                <a class="btn btn-secondary btn-sm mt-1 myb-1" href="{% url 'post-update' object.id %} ">update</a> <br>
-                <a class="btn btn-danger btn-sm mt-1 myb-1" href="{% url 'post-delete' object.id %} ">Delete</a>
+ <div class="row featurette my-3">
+          <div class="col-md-12">
+               <div class="mb-1 text-muted">{{ object.date_time }}</div>
 
-              {% endif %}
-            </div>
-            <img class="card-img-right flex-auto d-none d-md-block"  alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="{{ post.author.profile.image.url }}" data-holder-rendered="true">
-        </div>
-    </div>
+            <h2 class="featurette-heading"> {{ object.title }}<span class="text-muted"> </span></h2>
+            <p class="lead">{{ object.content }}</p>
+          </div>
+          <div class="col-md-5">
+            <img class="rounded-circle" src="{{ events.author.profile.image.url }}" alt="Generic placeholder image" width="140" height="140">
+            <strong class="d-inline-block mb-2 my-4 text-primary" href="{% url 'user_events' object.author.username %} ">{{ object.author }}</strong>
+
+          </div>
+      </div>
+      <div>
+        {% if object.author == user%}
+
+        <a href="{% url 'events_update' object.id %}" class="btn btn-primary btn-lg active my-3" role="button" aria-pressed="true">Update</a>
+        <a href="{% url 'events_delete' object.id %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Delete</a>  
+      {% endif %}
+  </div>
 
  {% endblock content%} 

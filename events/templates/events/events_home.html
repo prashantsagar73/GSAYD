@@ -1,7 +1,25 @@
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
-{% block title %} Post {% endblock title %}
+{% block title %} Events {% endblock title %}
 {% block content %} 
 
-this is events home 
+{% for Events in event %}
+<div class="col-md-10">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+            <a class="list-group-item list-group-item-action light mb-1" href="{% url 'user_events' Events.author.username %}">{{ Events.author }}</a>     
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">{{ Events.title|slice:30 }}</a>
+              </h3>
+              <div class="mb-1 text-muted">{{ Events.date_time }}</div>
+              <p class="card-text mb-auto">{{ Events.content|slice:200 }}...</p>
+            <a href="{% url 'events_detail' Events.id %}">Continue reading</a>
+            </div>
+             <img class="rounded-right" style="width: 200px; height: 250px;" src="{{ Events.author.profile.image.url }}" data-holder-rendered="true">  
+               </div>
+        </div>
+ {% endfor %} 
+
+
+ 
 {% endblock content%} 
