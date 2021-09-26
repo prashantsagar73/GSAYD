@@ -2,10 +2,9 @@
 {% load crispy_forms_tags %}
 {% block title %} Profile  {% endblock title %}
 {% block content %} 
-<div class= "d-flex justify-content-center container" >
-<div class=" d-inline-flex content-section">
-<div class="media" >
-    <img class="rounded-circle account-img" src="{{ user.profile.image.url}}" alt= height="200" width= "200">
+<div class="d-inline-flex content-section my-4">
+<div class="media mx-5" >
+    <img class="rounded-circle account-img " src="{{ user.profile.image.url}}" height="250" width= "200"> <br>
     <div class="meida-body">
     <h2 class="account-heading">{{ user.username}} </h2>
     <p class="text-secondary">{{ user.email }}</p>
@@ -26,7 +25,6 @@
 </div>
 <hr>
 
-</div>
 
 
 <div class= "justify-content-center container" >

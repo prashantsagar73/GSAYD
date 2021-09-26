@@ -18,26 +18,17 @@
 
   <body>
 
-<header class="p-3 bg-dark text-white">
+<header class="p-2 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="{% url 'Home' %}" class="nav-link px-2 text-white">Home</a></li>
+          {% if user.is_authenticated %}
           <li><a href="{% url 'events_home' %}" class="nav-link px-2 text-white">Events</a></li>
         </ul>
+          <a href="{% url 'logout' %}" class="nav-link px-2 text-white ">Logout</a></li>
 
-        {% comment %} <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> {% endcomment %}
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}" class="nav-link px-2 text-white">Logout</a></li>
-            <li><a href="{% url 'profile' %}" class="nav-link px-2 text-white">Profile</a></li>
+          <a href="{% url 'profile' %}" class="nav-link px-2 text-white ">Profile</a></li>
           {% else %}
             <li><a href="{% url 'login' %}" class="nav-link px-2 text-white">Login</a></li>
             <li><a href="{% url 'register' %}" class="nav-link px-2 text-white">Register</a></li>
@@ -52,12 +43,14 @@
 <div class="container-fluid"> 
     {% block content %} {% endblock%}
 </div>
-<hr>
- <footer class="container">
+
+
+ <footer class="container-fluid">
+ <hr>
     <p class="float-end"><a href="#">Back to top</a></p>
     <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
   </footer>
-
+</div>
 
 <script> 
 {% block script%}

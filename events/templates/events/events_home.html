@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block title %} Events {% endblock title %}
+{% block style %} {% endblock style %}
 {% block content %} 
-
-
-
-
-
+<div class = "d-flex justify-content-center">
 
 {% for Events in event %}
-<div class="col-md-10">
+<div class="col-md-10 my-4">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
             <a class="list-group-item list-group-item-action light mb-1" href="{% url 'user_events' Events.author.username %}">{{ Events.author }}</a>     
@@ -23,8 +20,7 @@
              <img class="rounded-right" style="width: 200px; height: 250px;" src="{{ Events.author.profile.image.url }}" data-holder-rendered="true">  
                </div>
         </div>
+
+    </div>    
  {% endfor %} 
-
-
- 
 {% endblock content%} 

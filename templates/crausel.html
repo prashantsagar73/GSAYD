@@ -5,83 +5,156 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <style>
-h2{
-    margin: 0;     
-    color: #666;
-    padding-top: 90px;
-    font-size: 52px;
-    font-family: "trebuchet ms", sans-serif;    
+<style>
+html,
+body {
+    height: 70%;
 }
 
-.item{
-    background: white;    
-    text-align: center;
-    height: 300px !important;
+.carousel,
+.item,
+.active {
+    height: 100%;
 }
 
-.carousel{
-    margin-top: 20px;
+.carousel-inner {
+  height: 100%;
+  background: #000;
 }
 
-.bs-example{
-	margin: 20px;
+.carousel-caption{padding-bottom:80px;}
+
+h2{font-size: 60px;}
+p{padding:10px}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    opacity:0.6;
 }
 
-.carousel.carousel-fade .item {
-  opacity:0;
-  filter: alpha(opacity=0); /* ie fix */
+/**
+ * Button
+ */
+.btn-transparent {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-transparent:hover {
+  background-color: #fff;
 }
 
-.carousel.carousel-fade .active.item {
-    opacity:1;
-    filter: alpha(opacity=100); /* ie fix */
+.btn-rounded {
+  border-radius: 70px;
 }
 
+.btn-large {
+  padding: 11px 45px;
+  font-size: 18px;
+}
 
-    </style>
+/**
+ * Change animation duration
+ */
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+</style>
     </head>
     <body>
-    <div class="bs-example">
-        <div id="myCarousel" class="carousel slide" data-interval="6500" data-ride="carousel">
-            <!-- Carousel indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>   
-           <!-- Carousel items -->
-            <div class="carousel-inner">
-                <div class="active item carousel-fade">
-                    <h2>Slide 1</h2>
-                    <div class="carousel-caption">
-                      <h3>First slide label</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="item carousel-fade">
-                    <h2>Slide 2</h2>
-                    <div class="carousel-caption">
-                      <h3>Second slide label</h3>
-                      <p>Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-                    </div>
-                </div>
-                <div class="item carousel-fade">
-                    <h2>Slide 3</h2>
-                    <div class="carousel-caption">
-                      <h3>Third slide label</h3>
-                      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
+   
+  
+  <!-- Full Page Image Background Carousel Header -->
+  <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://www.marchettidesign.net/demo/optimized-bootstrap/code.jpg');"></div>
+                <div class="carousel-caption">
+                     <h2 class="animated fadeInLeft">Caption Animation</h2>
+                     <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                     <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
                 </div>
             </div>
-            <!-- Carousel nav -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://www.marchettidesign.net/demo/optimized-bootstrap/conference.jpg');"></div>
+                <div class="carousel-caption">
+                     <h2 class="animated fadeInDown">Caption Animation</h2>
+                     <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                     <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://www.marchettidesign.net/demo/optimized-bootstrap/campus.jpg');"></div>
+                <div class="carousel-caption">
+                     <h2 class="animated fadeInRight">Caption Animation</h2>
+                     <p class="animated fadeInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                     <p class="animated fadeInRight"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+                </div>
+            </div>
         </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
     </div>
+
     </body>
     </html>                                		
