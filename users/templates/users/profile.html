@@ -1,9 +1,9 @@
-{% extends "home/base.html" %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block title %} Profile  {% endblock title %}
 {% block content %} 
-<div class= "container" >
-<div class="content-section">
+<div class= "d-flex justify-content-center container" >
+<div class=" d-inline-flex content-section">
 <div class="media" >
     <img class="rounded-circle account-img" src="{{ user.profile.image.url}}" alt= height="200" width= "200">
     <div class="meida-body">
@@ -24,5 +24,33 @@
         </div>
     </form>
 </div>
+<hr>
+
 </div>
+
+
+<div class= "justify-content-center container" >
+<p> CREATE/UPLOAD </p>
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href=" {% url 'create_events' %} ">Event</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Club</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ebook</a>
+      </li>    
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">ADD a post </h5>
+    <p class="card-text">content should be genuine.</p>
+    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+  </div>
+</div>
+</div>
+
 {% endblock content%} 
