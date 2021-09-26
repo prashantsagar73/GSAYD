@@ -27,13 +27,13 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="{% url 'Home' %}" class="nav-link px-2 text-white">Home</a></li>
-          {% comment %} <li><a href="{% url 'Blog_about' %}" class="nav-link px-2 text-white">About</a></li> {% endcomment %}
+          <li><a href="{% url 'events_home' %}" class="nav-link px-2 text-white">Events</a></li>
         </ul>
 
-        <form class="d-flex">
+        {% comment %} <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> {% endcomment %}
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}" class="nav-link px-2 text-white">Logout</a></li>
