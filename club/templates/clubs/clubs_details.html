@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %} 
+
+ <div class="row featurette my-3">
+          <div class="col-md-12">
+               <div class="mb-1 text-muted">{{ object.date_time }}</div>
+
+            <h2 class="featurette-heading"> {{ object.title }}<span class="text-muted"> </span></h2>
+            <p class="lead">{{ object.content }}</p>
+          </div>
+          <div class="col-md-5">
+            <img class="rounded-circle" src="{{ club.author.profile.image.url }}" alt="Generic placeholder image" width="140" height="140">
+            <strong class="d-inline-block mb-2 my-4 text-primary" href="{% url 'user_clubs' object.author.username %} ">{{ object.author }}</strong>
+
+          </div>
+      </div>
+      <div>
+        {% if object.author == user%}
+
+        <a href="{% url 'clubs_update' object.id %}" class="btn btn-primary btn-lg active my-3" role="button" aria-pressed="true">Update</a>
+        <a href="{% url 'clubs_delete' object.id %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Delete</a>  
+      {% endif %}
+  </div>
+
+ {% endblock content%} 

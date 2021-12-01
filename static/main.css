@@ -1,7 +1,19 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 :root {
 	--primary-color: #3a4052;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
 }
 
 a {
@@ -14,6 +26,16 @@ h1 {
 	font-size: 60px;
 	line-height: 1.2;
 	margin-bottom: 15px;
+}
+
+.showcase {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+	padding: 0 20px;
 }
 
 .video-container {
@@ -92,9 +114,13 @@ h1 {
 
 body,
 html {
+  margin:0;
+  padding:0;
   font-family:yantramanav;
 }
-
+body {
+  font-size:16px;
+}
 h1 {
   color:#fff;
   font-size:4vw;
@@ -130,20 +156,21 @@ button:hover {
   background:rgba(0,0,0,0.1);
 }
 .section {
-box-sizing:border-box;
-background:url('https://dl.dropboxusercontent.com/s/xaf5d30fctjo90v/snow-landscape-nature-sky.jpeg')  center top no-repeat;
-background-size:cover;
-min-height:100vh;
-display:-webkit-box;
-display:-webkit-flex;
-display:-ms-flexbox;
-display:flex;
-width:100%;
-position:relative;
--webkit-box-align:center;
--webkit-align-items:center;
--ms-flex-align:center;
-align-items:center;
+  padding:0px 200px 100px 0px;
+  box-sizing:border-box;
+ background:url('https://dl.dropboxusercontent.com/s/xaf5d30fctjo90v/snow-landscape-nature-sky.jpeg')  center top no-repeat;
+  background-size:cover;
+  min-height:100vh;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  width:100%;
+  position:relative;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
   overflow:hidden;
 }
 .fa-angle-double-down {

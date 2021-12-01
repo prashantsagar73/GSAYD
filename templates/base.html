@@ -14,7 +14,7 @@
 
 <style> {% block style %} {% endblock style %} </style>
 
- </head>
+</head>
 
   <body>
 
@@ -25,6 +25,7 @@
           <li><a href="{% url 'Home' %}" class="nav-link px-2 text-white">Home</a></li>
           {% if user.is_authenticated %}
           <li><a href="{% url 'events_home' %}" class="nav-link px-2 text-white">Events</a></li>
+          <li><a href="{% url 'clubs_home' %}" class="nav-link px-2 text-white">Clubs</a></li>
         </ul>
           <a href="{% url 'logout' %}" class="nav-link px-2 text-white ">Logout</a></li>
 
@@ -43,20 +44,23 @@
 <div class="container-fluid"> 
     {% block content %} {% endblock%}
 </div>
-
-
- <footer class="container-fluid">
- <hr>
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-  </footer>
 </div>
 
 <script> 
 {% block script%}
 
 {% endblock script %}
-</script> 
+</script>
+
+{% comment %} 
+ <footer class="container-fluid">
+ <hr>
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer> {% endcomment %}
+
+
+ 
       <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

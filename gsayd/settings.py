@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'home',
     'crispy_forms',
     'events',
+    'club',
 ]
 
 MIDDLEWARE = [
