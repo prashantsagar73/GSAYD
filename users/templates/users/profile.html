@@ -24,9 +24,6 @@
     </form>
 </div>
 <hr>
-
-
-
 <div class= "justify-content-center container" >
 <p> CREATE/UPLOAD </p>
 <div class="card text-center">
@@ -36,19 +33,18 @@
         <a class="nav-link active" aria-current="true" href=" {% url 'create_events' %} ">Event</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href=" {% url 'create_clubs' %} ">Event</a>
+        <a class="nav-link active" aria-current="true" href=" {% url 'create_clubs' %} ">Clubs</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ebook</a>
+        {% comment %} <a class="nav-link" href="#">Ebook</a> {% endcomment %}
       </li>    
     </ul>
   </div>
   <div class="card-body">
     <h5 class="card-title">ADD a post </h5>
     <p class="card-text">content should be genuine.</p>
-    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
   </div>
 </div>
-</div>
+</div> 
 
 {% endblock content%} 

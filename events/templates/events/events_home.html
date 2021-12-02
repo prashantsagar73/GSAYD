@@ -5,7 +5,6 @@
 {% endblock style %}
 {% block content %} 
 
-
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -14,21 +13,21 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://source.unsplash.com/collection/190727/8020x1940" class="d-block w-100" alt="...">
+      <img src="https://source.unsplash.com/8020x1940/?science,code" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://source.unsplash.com/collection/190727/8020x1940" class="d-block w-100" alt="...">
+      <img src="https://source.unsplash.com/8020x1940/?college,events" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://source.unsplash.com/collection/190727/8020x1940" class="d-block w-100" alt="...">
+      <img src="https://source.unsplash.com/8020x1940/?science,tech" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
@@ -45,11 +44,9 @@
   </button>
 </div>
 
-
-
 {% for Events in event %}
-<div class = "d-flex justify-content-center">
-<div class="col-md-10 my-4">
+<div class = "d-flex justify-content-center my-2">
+<div class="col-md-10">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
             <a class="list-group-item list-group-item-action light mb-1" href="{% url 'user_events' Events.author.username %}">{{ Events.author }}</a>     
@@ -60,10 +57,9 @@
               <p class="card-text mb-auto">{{ Events.content|slice:200 }}...</p>
             <a href="{% url 'events_detail' Events.id %}">Continue reading</a>
             </div>
-             {% comment %} <img class="rounded-right" style="width: 200px; height: 250px;" src="{{ Events.author.profile.image.url }}" data-holder-rendered="true">   {% endcomment %}
                </div>
         </div>
-
+</div>
     </div>    
  {% endfor %} 
 {% endblock content%} 

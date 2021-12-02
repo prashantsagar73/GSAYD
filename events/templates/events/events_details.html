@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block content %} 
 
- <div class="row featurette my-3">
-          <div class="col-md-12">
-               <div class="mb-1 text-muted">{{ object.date_time }}</div>
 
-            <h2 class="featurette-heading"> {{ object.title }}<span class="text-muted"> </span></h2>
+
+<div class="p-5 mb-4 bg-dark rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold ">{{ object.title }}</h1>
+        {% comment %} <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p> {% endcomment %}
+        <button class="btn btn-primary btn-lg" type="button">{{ object.date_time }}</button>
+      </div>
+</div>
+
+
+<div class=" container my-5">
+ <div class="row featurette mx-3">
+          <div class="col-md-12">
+
+            <h2 class="featurette-heading blockquote"> {{ object.title }}<span class="text-muted"> </span></h2>
             <p class="lead">{{ object.content }}</p>
           </div>
           <div class="col-md-5">
@@ -21,5 +32,23 @@
         <a href="{% url 'events_delete' object.id %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Delete</a>  
       {% endif %}
   </div>
+
+
+
+{% comment %} 
+<div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+      <div class="card p-3">
+        <figure class="p-3 mb-0">
+          <blockquote class="blockquote">
+            <p>A well-known quote, contained in a blockquote element.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer mb-0 text-muted">
+            Someone famous in <cite title="Source Title">Source Title</cite>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+</div> {% endcomment %}
 
  {% endblock content%} 
