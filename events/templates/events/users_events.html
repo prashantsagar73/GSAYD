@@ -8,13 +8,13 @@
       <div class="card-body d-flex flex-column align-items-start">
             {% comment %} <strong class="d-inline-block mb-2 text-primary" href="{% url 'Events-posts' Events .author.username %} ">{{ Events .author }}</strong> {% endcomment %}
               <h3 class="mb-0">
-                <a class="text-dark" href="#">{{ Events .title|slice:30 }}</a>
+                <a class="text-dark" href="#">{{ Events.title }}</a>
               </h3>
-              <div class="mb-1 text-muted">{{ Events .date_time }}</div>
-                <p class="card-text mb-auto">{{ Events .content|slice:200 }}...</p>
-                <a href="{% url 'Events _detail' Events .id %}">Continue reading</a>
+              <div class="mb-1 text-muted">{{ Events.date_time }}</div>
+                <p class="card-text mb-auto">{{ Events.content|slice:200 }}...</p>
+                <a href="{% url 'Events _detail' Events.id %}">Continue reading</a>
             </div>
-            <img class="card-img-right flex-auto d-none d-md-block"  alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="{{ Events .author.profile.image.url }}" data-holder-rendered="true">
+            {% comment %} <img class="card-img-right flex-auto d-none d-md-block"  alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="{{ Events .author.profile.image.url }}" data-holder-rendered="true"> {% endcomment %}
           </div>
   </div>
   {% endfor %}

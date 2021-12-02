@@ -57,7 +57,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class UserPostListView(ListView):
     model = Events 
-    template_name = "events/user_events_page.html"  #<app>/<model> _ <viewtype>.html
+    template_name = "events/users_events.html"  #<app>/<model> _ <viewtype>.html
     context_object_name = 'events'
     ordering =['-date_time']
     paginate_by = 4
